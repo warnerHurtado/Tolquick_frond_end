@@ -1,0 +1,171 @@
+<div class="text-center">
+  <span class="login100-form-title">
+    <hr />
+    <img
+      src="assets/images/logo.jpg"
+      height="50"
+      class="rounded-circle"
+      alt="tollquick"
+    />
+    <hr />
+  </span>
+
+  <div class="shadow p-3 mb-5 bg-white rounded w-50 mx-auto m-5">
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+      <h3>Creando cuenta</h3>
+
+      <span
+        *ngIf="f.submitted && f.controls['email'].errors"
+        class="text-danger animated fadeIn"
+      >
+        <small> El correo es obligatorio</small>
+      </span>
+      <div class="mb-3">
+        <input
+          class="form-control w-75 mx-auto m-2"
+          type="email"
+          name="email"
+          [(ngModel)]="user.email"
+          required
+          email
+          placeholder="Email"
+        />
+
+        <span class="focus-input100"></span>
+      </div>
+
+      <span
+        *ngIf="f.submitted && f.controls['nombre'].errors"
+        class="text-danger animated fadeIn"
+      >
+        <small>El nombre es obligatorio</small>
+      </span>
+      <div class="mb-3">
+        <input
+          class="form-control w-75 mx-auto m-2"
+          type="text"
+          name="nombre"
+          required
+          minlength="2"
+          [(ngModel)]="user.nombre"
+          placeholder="Nombre"
+        />
+
+        <span class="focus-input100"></span>
+      </div>
+
+      <span
+        *ngIf="f.submitted && f.controls['primerApellido'].errors"
+        class="text-danger animated fadeIn"
+      >
+        <small>El apellido es obligatorio</small>
+      </span>
+      <div class="mb-3">
+        <input
+          class="form-control w-75 mx-auto m-2"
+          type="text"
+          name="primerApellido"
+          required
+          minlength="2"
+          [(ngModel)]="user.primerApellido"
+          placeholder="Primer apellido"
+        />
+
+        <span class="focus-input100"></span>
+      </div>
+
+      <span
+        *ngIf="f.submitted && f.controls['segundoApellido'].errors"
+        class="text-danger animated fadeIn"
+      >
+        <small> El apellido es obligatorio</small>
+      </span>
+      <div class="mb-3">
+        <input
+          class="form-control w-75 mx-auto m-2"
+          type="text"
+          name="segundoApellido"
+          required
+          minlength="2"
+          [(ngModel)]="user.segundoApellido"
+          placeholder="Segundo apellido"
+        />
+
+        <span class="focus-input100"></span>
+      </div>
+
+      <span
+        *ngIf="f.submitted && f.controls['cedula'].errors"
+        class="text-danger animated fadeIn"
+      >
+        <small>La cedula es obligatoria</small>
+      </span>
+      <div class="mb-3">
+        <input
+          class="form-control w-75 mx-auto m-2"
+          type="text"
+          name="cedula"
+          required
+          minlength="2"
+          [(ngModel)]="user.cedula"
+          placeholder="Cédula"
+        />
+
+        <span class="focus-input100"></span>
+      </div>
+
+      <span
+        *ngIf="f.submitted && f.controls['password'].errors"
+        class="text-danger animated fadeIn"
+      >
+        <small>La contraseña debe de contener más de 6 digitos</small>
+      </span>
+      <div class="mb-3">
+        <input
+          class="form-control w-75 mx-auto m-2"
+          type="password"
+          name="password"
+          required
+          minlength="6"
+          [(ngModel)]="user.password"
+          placeholder="Contraseña"
+        />
+        <span class="focus-input100"></span>
+      </div>
+
+      <div class="mb-3">
+        <div class="contact100-form-checkbox">
+          <input
+           [(ngModel)] = "remember"
+           class="form-check-input" type="checkbox" name="remember-me" />
+          <label class="form-check-label" for="ckb1">
+            Recordar mi usuario
+          </label>
+        </div>
+
+        <div>
+          <a routerLink="/login" class="txt1">
+            ¿Ya tienes cuenta? / Ingresar
+          </a>
+        </div>
+      </div>
+
+      <div class="container-login100-form-btn m-t-17">
+        <button class="btn btn-dark w-50 m-3" type="submit">
+          Crear cuenta
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-light text-center text-lg-start">
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+      © 2020 Copyright:
+      <a class="text-dark" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
+</div>
