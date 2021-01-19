@@ -6,17 +6,10 @@
     <div class="bg-light border-right" id="sidebar-wrapper">
       <div class="sidebar-heading">Menu principal</div>
       <div class="list-group list-group-flush">
-        <a href="#" class="list-group-item list-group-item-action bg-light"
-          >Dashboard</a
+        <a href="#" (click)="changeView()" class="list-group-item list-group-item-action bg-light"
+          >Estadísticas</a
         >
-        <a
-          href="#"
-          class="list-group-item list-group-item-action bg-light"
-          [routerLink]="['/login']"
-          routerLinkActive="router-link-active"
-          >Shortcuts</a
-        >
-        <a href="#" class="list-group-item list-group-item-action bg-light"
+        <a  class="list-group-item list-group-item-action bg-light"
           >Overview</a
         >
         <a href="#" class="list-group-item list-group-item-action bg-light"
@@ -25,7 +18,7 @@
         <a href="#" class="list-group-item list-group-item-action bg-light"
           >Profile</a
         >
-        <a (click)="salir()" class="list-group-item list-group-item-action bg-light"
+        <a href="#" (click)="quit()" class="list-group-item list-group-item-action bg-light"
           >Cerrar Sesión</a
         >
       </div>
@@ -34,8 +27,10 @@
     <!-- Page Content -->
     <div id="page-content-wrapper">
       <div class="container-fluid">
-        <h1 class="mt-4">Aquí va lo otro</h1>
-        <router-outlet></router-outlet>
+        <div *ngIf="lines" >
+          <app-lines> </app-lines>
+        </div>
+        
       </div>
     </div>
     <!-- /#page-content-wrapper -->
@@ -43,13 +38,7 @@
   <!-- /#wrapper -->
 
   <!-- Footer -->
-  <footer class="bg-light text-center text-lg-start">
-    <!-- Copyright -->
-    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
-      © 2020 Copyright:
-      <a class="text-dark" href="https://mdbootstrap.com/">MDBootstrap.com</a>
-    </div>
-    <!-- Copyright -->
-  </footer>
+  <app-footer></app-footer>
   <!-- Footer -->
+
 </div>

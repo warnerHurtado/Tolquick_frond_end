@@ -11,8 +11,11 @@ import { NavbarComponent } from './pages/home/navbar/navbar.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { SidebarComponent } from './pages/home/admin/sidebar/sidebar.component';
 
+// Graficos
 
-
+import {ChartsModule} from 'ng2-charts';
+import { FooterComponent } from './pages/footer/footer.component';
+import { LinesComponent } from './pages/home/graphics/lines/lines.component';
 
 @NgModule({
   declarations: [
@@ -21,13 +24,16 @@ import { SidebarComponent } from './pages/home/admin/sidebar/sidebar.component';
     RegistryComponent,
     NavbarComponent,
     SidebarComponent,
+    FooterComponent,
+    LinesComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     NoopAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    ChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

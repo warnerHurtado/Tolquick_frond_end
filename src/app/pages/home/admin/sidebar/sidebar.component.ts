@@ -10,6 +10,8 @@ import { AuthService } from '../../../../services/auth.service';
 })
 export class SidebarComponent implements OnInit {
 
+  lines = true;
+
   constructor(private auth  : AuthService,
               private router: Router) { }
 
@@ -21,10 +23,13 @@ export class SidebarComponent implements OnInit {
       $("#wrapper").toggleClass("toggled");
     });
   }
-  salir(){
+  quit(){
   this.auth.logOut();
   this.router.navigateByUrl('/login');
-
 }
+
+  changeView(){
+    this.lines = true;
+  }
 
 }
