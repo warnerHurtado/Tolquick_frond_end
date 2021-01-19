@@ -1,5 +1,5 @@
 {
-  "name": "tolquick-web-app",
+  "name": "tollquick-web-app",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -7,7 +7,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "postinstall": "ng build --aot --prod"
   },
   "private": true,
   "dependencies": {
@@ -73,7 +74,7 @@
     "typescript": "~3.8.3"
   },
   "engines": {
-    "node": "12.16.3",
-      "npm": "6.14.5"
+    "node": "~12.16.3",
+      "npm": "~6.14.5"
   }
 }
